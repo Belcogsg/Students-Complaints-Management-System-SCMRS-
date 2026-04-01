@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(63, 86, 218, 1) 0%, rgb(91, 45, 165) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    margin: 5%;
+    padding-left: 2%;
+}
+
+
+/* .login-page {
+    column-count: 2;
+} */
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login-page h2{
+    font-size: 54px;
+    font-weight: 900;
+    padding-bottom: 1.5rem;
+}
+
+.login-page h2 span {
+    color: gold
+}
+
+.login-page p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:rgba(255, 255, 255, 0.918)
+}
+
+.bottom-info {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.digital h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color:gold;
+    padding-bottom: 1rem;
+}
+
+.accessible h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color:gold;
+    padding-bottom: 1rem;
+}
+
+.resolution h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color:gold;
+    padding-bottom: 1rem;
+}   
+
+.login-page .uname-passwd form{
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 5px rgba(93, 28, 199, 0.6);
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 500px;
+    height: 100%;
+    
+}
+
+.uname-passwd h2 {
+    padding-top: 5%;
+    padding-bottom: 1rem;
+    font-size: 24px;
+    color: rgba(7, 7, 7, 0.842);
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.uname-passwd input {
+    width: 100%;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #9ec2e471;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.uname-passwd button {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(81, 73, 194);
+    box-shadow: 0px 0px 10px 5px rgba(102, 17, 238, 0.315);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
