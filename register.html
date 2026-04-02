@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register: Students Complaints Management & Reporting System</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container1">
+        <div class="left-container">
+            <i class="fas fa-user-plus"></i><br>
+            <h2>Create Your Account</h2><br>
+            <p>Join the community where your voice matters and issues are resolved promptly & efficiently.</p><br>
+            <p><i class="fas fa-check-circle"></i>Secure personal dashboard</p>
+            <p><i class="fas fa-check-circle"></i>Real-time status updates</p>
+            <p><i class="fas fa-check-circle"></i>Direct admin communication</p>
+        </div>
+
+        <div class="right-container">
+            <h2>Get Started</h2>
+
+            <h3>SELECT YOUR IDENTITY</h3>
+            <div class="roles">
+                <div class="student-role">
+                    <i class="fas fa-user-graduate" style="font-size: 25px; color:rgb(163, 160, 160);"></i>
+                    <p style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700;color:rgb(19, 18, 18);">STUDENT</p>
+                </div>
+
+                <div class="staff-role">
+                    <i class="fas fa-user-tie" style="font-size: 25px; color:rgb(163, 160, 160);"></i><br>
+                    <p style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700;color:rgb(19, 18, 18);">STAFF (Departmental Officer / Admin)</p>
+                </div>
+
+            </div>
+
+            <!-- if student role is selected -->
+            <div class="student-form">
+                <form action="register_student.php" method="POST">
+                    <input type="text" name="username" placeholder="2023-04-xxxxx" required><br><br>
+                    <input type="email" name="email" placeholder="Email" required><br><br>
+                    <input type="password" name="password" placeholder="Password" required><br><br>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+                    <button type="submit">Create Account</button>
+                </form>
+        </div>
+    </div>
+
+</body>
+</html>
