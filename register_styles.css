@@ -80,6 +80,15 @@ html, body {
     padding-right: 4rem;
 }
 
+/* .error-message {
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+} */
+
 /* student role before hover */
 .student-role {
     display: flex;
@@ -118,26 +127,52 @@ html, body {
     cursor: pointer;
 }
 
-.student-form {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 4rem;
+.active-role {
+    border: 2px solid rgb(87, 100, 194);
+    background-color: rgba(87, 100, 194, 0.08);
+    transform: scale(1.03);
 }
 
-.student-form label {
-    font-size: 14px;
+.student-form,
+.staff-form {
+    display: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.form-box {
+    display: none;  /* we hide the forms initially before selecting */
+    flex-direction: column;
+    padding: 1rem 4rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-box label {
+    font-size: 15px;
     font-weight: 700;
     color: rgb(87, 101, 184);
 }
 
-.student-form input {
+.form-box input {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
 }
 
-.student-form button {
+.form-box button {
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;

@@ -6,6 +6,31 @@
     <title>Register: Students Complaints Management & Reporting System</title>
     <link rel="stylesheet" href="register_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script>
+        function showForm(role) {
+            let studentForm = document.getElementById("studentForm");
+            let staffForm = document.getElementById("staffForm");
+
+            let studentRole = document.querySelector(".student-role");
+            let staffRole = document.querySelector(".staff-role");
+
+            studentRole.classList.remove("active-role");
+            staffRole.classList.remove("active-role");
+
+            if (role === "student") {
+                studentForm.style.display = "flex";
+                staffForm.style.display = "none";
+                studentRole.classList.add("active-role");
+                studentForm.querySelector("input").focus();
+            } else {
+                studentForm.style.display = "none";
+                staffForm.style.display = "flex";
+                staffRole.classList.add("active-role");
+                staffForm.querySelector("input").focus();
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container1">
@@ -23,12 +48,12 @@
 
             <h3>SELECT YOUR IDENTITY</h3>
             <div class="roles">
-                <div class="student-role">
+                <div class="student-role" onclick="showForm('student')">
                     <i class="fas fa-user-graduate" style="font-size: 25px; color:rgb(163, 160, 160);"></i>
                     <p style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700;color:rgb(19, 18, 18);">STUDENT</p>
                 </div>
 
-                <div class="staff-role">
+                <div class="staff-role" onclick="showForm('staff')">
                     <i class="fas fa-user-tie" style="font-size: 25px; color:rgb(163, 160, 160);"></i><br>
                     <p style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700;color:rgb(19, 18, 18);">STAFF (Departmental Officer / Admin)</p>
                 </div>
@@ -36,7 +61,7 @@
             </div>
 
             <!-- if student role is selected -->
-            <div class="student-form">
+            <div class="form-box student-form" id="studentForm">
                 <form action="register_student.php" method="POST">
                     <label for="username">ENTER USERNAME (Registration Number)</label><br>
                     <input type="text" name="username" placeholder="2023-04-xxxxx" required><br><br>
@@ -47,8 +72,23 @@
                     <label for="password">PASSWORD</label><br>
                     <input type="password" name="password" placeholder="Password" required><br><br>
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
-                    <button type="submit">Create Account</button>
+                    <button type="submit">Create Student Account</button>
                 </form>
+            </div>
+
+            <div class="form-box staff-form" id="staffForm">
+                <form action="register_staff.php" method="POST">
+                    <label>ENTER STAFF ID</label><br>
+                    <input type="text" name="staff_id" placeholder="Staff ID" required><br><br>
+
+                    <label>PASSWORD</label><br>
+                    <input type="password" name="password" placeholder="Password" required><br><br>
+
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+
+                    <button type="submit">Create Staff Account</button>
+                </form>
+            </div>
         </div>
     </div>
 
