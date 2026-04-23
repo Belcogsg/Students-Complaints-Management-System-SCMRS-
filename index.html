@@ -6,6 +6,42 @@
         <title>Students Complaints Management & Reporting System (SCMRS)</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <script>
+            function validateLogin(event) {
+                event.preventDefault();
+
+                let usernameInput = document.querySelector('input[name="username"]')
+                let passwordInput = document.querySelector('input[name="password"]')
+                let errorBox = document.getElementById("error-message");
+
+                let username = usernameInput.value.trim();
+                let password = passwordInput.value.trim();
+
+                usernameInput.style.border = "";
+                passwordInput.style.border = "";
+
+                if (username === "" || password === "") {
+                    errorBox.innerText = "Please fill all of the fields.";
+                    errorBox.style.display = "block";
+
+                    if (username === "") {
+                        usernameInput.style.border = "1px solid red";
+                    }
+
+                    if (password === "") {
+                        passwordInput.style.border = "1px solid red";
+                    }
+                    
+                    return false;
+                }
+
+                errorBox.style.display = "none";
+
+                // for demo only
+                alert("Login successful!");
+            }
+        </script>
     </head>
 
     <body>
@@ -36,21 +72,23 @@
 
             <br><br><br>
 
-            <!-- the login form -->
+            <!-- this is our login form -->
             <div class="uname-passwd">
-                <form action="login.php" method="POST">
+                <form action="login.php" method="POST" onsubmit="validateLogin(event)" novalidate>
                     <h2 style="text-align: center;">Welcome Back!</h2>
                     <p style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; color:rgba(32, 33, 34, 0.575); text-align: center;">Login to your account</p><br><br>
 
                     <div class="input-box">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username">
                     </div>
+                    <p id="error-message" style="color:red; display:none; font-size:14px; margin-top:10px;"></p>
                     
                     <div class="input-box">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" name="password" placeholder="Password" required>
                     </div>
+                    <p id="error-message" style="color:red; display:none; font-size:14px; margin-top:10px;"></p>
                     
                     <button type="submit">Login to portal</button><br><br>
 

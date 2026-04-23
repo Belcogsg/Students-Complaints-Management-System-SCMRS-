@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overscroll-behavior: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
     background: linear-gradient(90deg, rgba(63, 86, 218, 1) 0%, rgb(91, 45, 165) 100%);
-    font-family: Arial, Helvetica, sans-serif;
     color:white;
     margin: 5%;
     padding-left: 2%;
@@ -30,7 +34,6 @@ body {
 }
 
 .left-content p {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 19px;
     color:rgba(255, 255, 255, 0.918)
 }
@@ -52,7 +55,6 @@ body {
 }
 
 .bottom-info h3 {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 900;
     color:gold; 
@@ -122,7 +124,6 @@ body {
     border: none;
     border-radius: 10px;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-weight: 700;
     cursor: pointer;
