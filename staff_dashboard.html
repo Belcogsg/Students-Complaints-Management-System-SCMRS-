@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 style="color:rgb(155, 155, 238); font-weight: 800; padding: 2rem;"><i class="fas fa-user-graduate" style="font-size: 25px; color:rgb(155, 155, 238);"></i>&nbsp;&nbsp;Staff Portal</h2>
+
+            <hr style="border: 0.5px solid rgba(255, 255, 255, 0.267); margin: 1rem 0;">
+
+            <ul>
+                <li><a href="staff_dashboard.html"><i class="fas fa-home">&nbsp;&nbsp;</i> Dashboard</a></li>
+                <li><a href="view_complaint.html"><i class="fas fa-tasks">&nbsp;&nbsp;</i> All Complaints</a></li>
+
+                <hr style="border: 0.5px solid rgba(255, 255, 255, 0.267); margin: 1rem 0;">
+
+                <br>
+
+                <li><a href="profile.html"><i class="fas fa-user">&nbsp;&nbsp;</i> My Profile</a></li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt">&nbsp;&nbsp;</i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <i class="fa-solid fa-gauge-high" style="font-size: 30px; "></i>&nbsp;&nbsp;<h2>Staff Dashboard</h2>
+            </header>
+
+            <div class="complaints-status" style="margin-top: 2rem;">
+                <div class="total-complaints">
+                    <div class="icon-card" style="background-color:royalblue;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <p>TOTAL COMPLAINTS</p>
+                    <p>0</p>
+                </div>
+
+                <div class="pending">
+                    <div class="icon-card" style="background-color:rgb(231, 168, 7);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p>PENDING</p>
+                    <p>0</p>
+                </div>
+
+                <div class="progress">
+                    <div class="icon-card" style="background-color:rgb(29, 166, 207);">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <p>IN PROGRESS</p>
+                    <p>0</p>
+                </div>
+
+                <div class="resolved">
+                    <div class="icon-card">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p>RESOLVED</p>
+                    <p >0</p>
+                </div>
+
+            </div>
+            
+            <div class="all-complaints">
+                <h3><i class="fas fa-tasks"></i> All Complaints</h3>
+                <p class="sub-text">Showing all submitted complaints</p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Category</th>
+                                <th>Assigned Staff</th>
+                                <th>Status</th>
+                                <th>Date Submitted</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>2023-04-00011</td>
+                                <td>Regarding toilet facilities</td>
+                                <td>Mr. John</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>2026-01-15</td>
+                            </tr>
+
+                            <tr>
+                                <td>2023-04-00400</td>
+                                <td>Hostel Complaint</td>
+                                <td>Md. Angela</td>
+                                <td><span class="status progress">In Progress</span></td>
+                                <td>2024-06-23</td>
+                            </tr>
+
+                            <tr>
+                                <td>2023-04-01235</td>
+                                <td>Practical training Issue</td>
+                                <td>Dr. Mushi</td>
+                                <td><span class="status resolved">Resolved</span></td>
+                                <td>2026-02-01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>
