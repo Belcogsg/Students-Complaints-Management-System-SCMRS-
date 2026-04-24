@@ -100,6 +100,7 @@ html, body {
     width: 300px;
     height: 150px;
     padding: 2rem;
+    transition: transform 0.3s ease;
 }
 
 /* staff role before hover */
@@ -113,23 +114,29 @@ html, body {
     width: 300px;
     height: 150px;
     padding: 2rem;
+    transition: transform 0.3s ease;
 }
 
 /* student role after hover */
 .student-role:hover {
-    border: 2px solid rgb(87, 101, 184);
+    border: rgb(114, 105, 245) 1px solid;
+    box-shadow: 0px 3px 10px 0px rgba(102, 17, 238, 0.315);
+    transform: scale(1.03);
     cursor: pointer;
 }
 
 /* staff role after hover */
 .staff-role:hover {
-    border: 2px solid rgb(87, 101, 184);
+    border: rgb(114, 105, 245) 1px solid;
+    box-shadow: 0px 3px 10px 0px rgba(102, 17, 238, 0.315);
+    transform: scale(1.03);
     cursor: pointer;
 }
 
 .active-role {
     border: 2px solid rgb(87, 100, 194);
     background-color: rgba(87, 100, 194, 0.08);
+    color: rgb(87, 100, 194);
     transform: scale(1.03);
 }
 
@@ -144,7 +151,7 @@ html, body {
     display: none;  /* we hide the forms initially before selecting */
     flex-direction: column;
     padding: 1rem 4rem;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {

@@ -9,18 +9,33 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background: linear-gradient(90deg, rgba(63, 86, 218, 1) 0%, rgb(91, 45, 165) 100%);
-    color:white;
+/* body {
     margin: 5%;
     padding-left: 2%;
+} */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 18px;
+    position: fixed;
+    padding: 1rem 3rem;
+    background-color: rgb(241, 243, 248);
+    color: rgb(76, 103, 223);
 }
 
 .login-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80vh;
+    background: linear-gradient(90deg, rgba(63, 86, 218, 1) 0%, rgb(91, 45, 165) 100%);
+    color: white;
+    /* margin: 5%; */
+    padding: 5%;
+    max-width: 100%;
+    min-height: 100vh;
 }
 
 .left-content h2{
@@ -129,4 +144,55 @@ body {
     cursor: pointer;
 }
 
+.why-use-scmrs h1{
+    color:rgb(55, 62, 73);
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+    margin: 2rem 0 0 0;
+    padding: 2rem 0 0 0;
+}
 
+.why-use-scmrs > p {
+    color:rgba(32, 33, 34, 0.575);
+    text-align: center;
+    padding: 1rem 0 0.5rem 0;
+    font-size: 17px;
+}
+
+.benefits {
+    display: flex;
+    gap: 2rem;
+    padding: 7%;
+}
+
+.benefit-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 25px;
+    /* font-size: 17px; */
+    border: rgb(212, 212, 223) 1px solid;
+    width: 450px;
+    border-radius: 15px;
+    padding: 5%;
+    transition: transform 0.3s ease;
+}
+
+.benefit-box i {
+    font-size: 40px;
+    color:rgb(93, 82, 241);
+}
+
+.benefit-box:hover {
+    border: rgb(114, 105, 245) 1px solid;
+    box-shadow: 0px 3px 10px 0px rgba(102, 17, 238, 0.315);
+    transform: scale(1.03);
+}
+
+.footer {
+    background: linear-gradient(90deg, rgba(63, 86, 218, 1) 0%, rgb(91, 45, 165) 100%);
+    color:rgb(223, 214, 214);
+    text-align: center;
+    padding: 3rem;
+}
