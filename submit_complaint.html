@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Submission</title>
+    <link rel="stylesheet" href="dashboard_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 style="color:rgb(155, 155, 238); font-weight: 800; padding: 2rem;"><i class="fas fa-user-graduate" style="font-size: 25px; color:rgb(155, 155, 238);"></i>&nbsp;&nbsp;Student Portal</h2>
+
+            <hr style="border: 0.5px solid rgba(255, 255, 255, 0.267); margin: 1rem 0;">
+
+            <ul>
+                <li><a href="student_dashboard.html"><i class="fas fa-home">&nbsp;&nbsp;</i> Dashboard</a></li>
+                <li><a href="submit_complaint.html"><i class="fas fa-plus-circle">&nbsp;&nbsp;</i> Submit Complaint</a></li>
+                <li><a href="complaint_status.html"><i class="fas fa-info-circle">&nbsp;&nbsp;</i> Track Complaint</a></li><br>
+
+                <hr style="border: 0.5px solid rgba(255, 255, 255, 0.267); margin: 1rem 0;">
+
+                <br>
+
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt">&nbsp;&nbsp;</i> Logout</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="header">
+                <i class="fas fa-file-alt" style="font-size: 30px;"></i>&nbsp;&nbsp;<h2>Submit New Complaint</h2>
+            </div>
+
+            <div class="page-title">
+                <i class="fa-solid fa-paper-plane" style="font-size: 25px;"></i>&nbsp;&nbsp;<h2 style="display:inline;">File a new complaint</h2><br>
+                <p>Fill out the form below to submit your complaint.</p>
+            </div>
+
+            <!-- <hr style="border: 0.5px solid rgba(255, 255, 255, 0.267); margin: 1rem 0;"> -->
+
+            <div class="tip">
+                <p style="font-size: 16px;"><i class="fas fa-lightbulb"></i>&nbsp;&nbsp;&nbsp;<b>Tip:</b> Be specific and provide detailed information about your complaint to help us address it effectively.</p>
+            </div>
+
+            <div class="submission-form">
+                <form action="submit_complaint.php" method="POST">
+                    <div class="basic-info">
+                        <i class="fas fa-info-circle" style="font-size: 23px; color: royalblue;"></i><h3 style="display: inline; font-size: 23px; font-weight:700; color: royalblue;">Basic Information</h3><br>
+
+                        <label for="complaint-title">Complaint Title&nbsp; <span style="color:red;">*</span></label>
+
+                        <div class="input-box">
+                            <input type="text" id="complaint-title" name="complaint_title" placeholder="e.g, Issue with the labs" required>
+                        </div>
+                        <!-- <p>0/200 characters</p> -->
+
+                        <label for="category">Category <span style="color:red;">*</span></label>
+                        
+                        <div class="input-box">
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <!-- <option value="academic">Academic Issue</option> -->
+                                <option value="administrative">Administrative Issue</option>
+                                <option value="practical training">Practical Training Issue</option>
+                                <option value="facilities">Facility Issue</option>
+                                <option value="food-service">Food Service Issue</option>
+                                <option value="housing">Housing</option>
+                                <option value="security">Security</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        
+                        <p>Categorizing helps route your complaint to the appropriate department.</p>
+
+                        <label for="department">Target Department <span style="color:red;">*</span></label>
+                        <select id="department" name="department" required>
+                            <option value="">Select a department</option>
+                            <option value="cafe">Cafeteria Services</option>
+                            <option value="facilities">Senior Administrative Officer (SAO)</option>
+                            <option value="financial">Student Affairs</option>
+                            <option value="housing">USAB</option>
+                            <option value="security">Director of Undergraduate Studies (DuS)</option>
+                        </select>
+                        <p>Your complaint will be routed to the selected department for review.</p>
+                    </div>
+                    
+
+
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i>&nbsp;Submit Complaint</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>
