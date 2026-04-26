@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="dashboard_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
@@ -43,23 +44,33 @@
                 <p style="font-size: 16px;"><i class="fas fa-lightbulb"></i>&nbsp;&nbsp;&nbsp;<b>Tip:</b> Be specific and provide detailed information about your complaint to help us address it effectively.</p>
             </div>
 
+
+            <!-- <div class="progress-steps">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div> -->
+
+
             <div class="submission-form">
                 <form action="submit_complaint.php" method="POST">
-                    <div class="basic-info">
-                        <i class="fas fa-info-circle" style="font-size: 23px; color: royalblue;"></i><h3 style="display: inline; font-size: 23px; font-weight:700; color: royalblue;">Basic Information</h3><br>
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fa-solid fa-list" style="display: inline; font-size: 23px; font-weight:700; color: royalblue;"></i><h3 style="font-size: 23px; font-weight:700; color: royalblue;">Basic Information</h3>
+                        </div>
 
                         <label for="complaint-title">Complaint Title&nbsp; <span style="color:red;">*</span></label>
-
                         <div class="input-box">
-                            <input type="text" id="complaint-title" name="complaint_title" placeholder="e.g, Issue with the labs" required>
+                            <input type="text" id="complaint-title" name="complaint_title" maxlength="200" placeholder="e.g, Issue with the labs" required>
+                            <p id="titleCount">0/200 characters</p>
                         </div>
-                        <!-- <p>0/200 characters</p> -->
 
-                        <label for="category">Category <span style="color:red;">*</span></label>
-                        
+
+                        <label for="category">Category <span style="color:red;">*</span></label>              
                         <div class="input-box">
                             <select id="category" name="category" required>
-                                <option value="">Select a category</option>
+                                <option value="" style="color:rgb(55, 62, 73)">Select a category</option>
                                 <!-- <option value="academic">Academic Issue</option> -->
                                 <option value="administrative">Administrative Issue</option>
                                 <option value="practical training">Practical Training Issue</option>
@@ -69,30 +80,117 @@
                                 <option value="security">Security</option>
                                 <option value="other">Other</option>
                             </select>
-                        </div>
 
-                        
-                        <p>Categorizing helps route your complaint to the appropriate department.</p>
+                            <p style="float: left;">Categorizing helps route your complaint to the appropriate department.</p>
+                            
+                        </div><br>
+
 
                         <label for="department">Target Department <span style="color:red;">*</span></label>
-                        <select id="department" name="department" required>
-                            <option value="">Select a department</option>
-                            <option value="cafe">Cafeteria Services</option>
-                            <option value="facilities">Senior Administrative Officer (SAO)</option>
-                            <option value="financial">Student Affairs</option>
-                            <option value="housing">USAB</option>
-                            <option value="security">Director of Undergraduate Studies (DuS)</option>
-                        </select>
-                        <p>Your complaint will be routed to the selected department for review.</p>
+                        <div class="input-box">
+                            <select id="department" name="department" required>
+                                <option value="">Select a department</option>
+                                <option value="cafe">Cafeteria Services</option>
+                                <option value="facilities">Senior Administrative Officer (SAO)</option>
+                                <option value="financial">Student Affairs</option>
+                                <option value="housing">USAB</option>
+                                <option value="security">Director of Undergraduate Studies (DuS)</option>
+                            </select>
+
+                            <p style="float: left;">Your complaint will be routed to the selected department for review.</p>
+                        </div>
+                        
                     </div>
                     
+                
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fa-solid fa-pen-to-square" style="display: inline; font-size: 23px; font-weight:700; color: royalblue;"></i><h3 style="font-size: 23px; font-weight:700; color: royalblue;">Complaint Details</h3>
+                        </div>
+                        <br>
 
+                        <label for="description">Complaint Description <span style="color:red;">*</span></label>
+                        <div class="input-box">
+                            <textarea id="description" name="description" rows="12" placeholder="Please describe your complaint in detail. Include any relevant dates, times, locations and any other information that may help us understand and resolve your issue..." style="font-family: Arial, sans-serif;" required></textarea>
+                            <p>0/1000 characters</p>
+                        </div>
 
-                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i>&nbsp;Submit Complaint</button>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fa-solid fa-link" style="display: inline; font-size: 23px; font-weight:700; color: royalblue;"></i><h3 style="font-size: 23px; font-weight:700; color: royalblue;">Evidence Attachments</h3>
+                        </div>
+
+                        <label for="evidence">Upload Evidence (optional)</label>
+                        <div class="input-box">
+                            <input type="file" id="evidence" name="evidence[]" multiple>
+                            <p style="float: left;">You can upload images or documents that support your complaint. Maximum file size: 5MB. Accepted formats: JPG, PNG, PDF.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fa-solid fa-shield-alt" style="display: inline; font-size: 23px; font-weight:700; color: royalblue;"></i><h3 style="font-size: 23px; font-weight:700; color: royalblue;">Privacy Options</h3>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy_options[]" value="anonymous">Submit Anonymously
+                            </label><br><br>
+
+                            <p style="float: left; line-height: 1.5; ">When enabled, your identity will be hidden from the staff. Administator can still view your identity for system management purposes.</p>
+                            
+                        </div>
+
+                    </div>
+
+                    <button type="submit" style="margin-top: 1rem;">Submit Complaint</button>
+                    <!-- <button type="button" style="margin-top: 1rem;">Cancel</button> -->
+
                 </form>
             </div>
         </main>
     </div>
     
 </body>
+
+<script>
+        let titleInput = document.getElementById("complaint-title");
+        let titleCount = document.getElementById("titleCount");
+
+        const descriptionInput = document.getElementById("description");
+        const descriptionCount = descriptionInput.nextElementSibling; // our <p> element next to the textarea
+
+        titleInput.addEventListener("input", function() {
+            titleCount.innerText = `${this.value.length}/200 characters`;
+        });
+
+        descriptionInput.addEventListener("input", function() {
+            descriptionCount.innerText = `${this.value.length}/1000 characters`;
+        });
+
+        function validateComplaintForm() {
+            let title = document.getElementById("complaint-title").value.trim();
+            let category = document.getElementById("category").value;
+            let department = document.getElementById("department").value;
+            let description = document.getElementById("description").value.trim();
+
+            let error = document.getElementById("formError");
+
+            if (title === "" || category === "" || department === "" || description === "") {
+                error.innerText = "Please fill in all required fields.";
+                return false;
+            }
+
+            if (description.length < 20) {
+                error.innerText = "Description must be at least 20 characters.";
+                return false;
+            }
+
+            error.innerText = "";
+            return true;
+        }
+
+</script>
 </html>
